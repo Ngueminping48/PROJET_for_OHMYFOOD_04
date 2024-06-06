@@ -1,0 +1,144 @@
+/* LAYOUT */
+
+$color-primary: #9356dc;
+$color-secondary1: #ff79da;
+$color-tertiary: #99e2d0;
+$slate: #353535;
+$silver: #f6f6f6;
+$green-font: #008766;
+$blue: #003a68;
+$sky: #89c8fa;
+$grey: #eaeaea;
+$white: #ffffff;
+$black: #000000;
+$color-secondary: #ff79da;
+$font-family: 'Roboto', sans-serif;
+$color-primary: #9356dc;
+$color-tertiary: #99e2d0;
+$grey: #eaeaea;
+$white: #ffffff;
+$shadow: #d5d5d5;
+$black: #353535;
+$light-gray: #f6f6f6;
+$icon: #7e7e7e;
+
+ul,
+figure {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+/*** header_images logo ***/
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0 15px 0;
+  background-color: $white;
+
+  img {
+    width: 197px;
+  }
+}
+
+/*** bouton ***/
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  border-radius: 30px;
+  width: 200px;
+  height: 50px;
+  font-size: 1rem;
+  background-image: linear-gradient(to top, $color-primary, $color-secondary);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+  color: $white;
+  border: none;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 40px 0px 40px 0px;
+
+  &:hover {
+    background-image: linear-gradient(
+      to top,
+      lighten($color-primary, 5%),
+      lighten($color-secondary1, 5%)
+    );
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
+    transition: 0.2s ease-in-out;
+  }
+}
+/****heart icon****/
+
+.fa-heart {
+  border: none;
+  background-color: $silver;
+  padding: 0;
+  .fa-solid.fa-heart {
+    opacity: 0;
+    background-image: linear-gradient(
+      to top,
+      darken($color-primary, 5%),
+      darken($color-secondary1, 5%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .fa-regular.fa-heart {
+    opacity: 1;
+  }
+  &:hover .fa-solid.fa-heart {
+    opacity: 1;
+  }
+}
+
+/*** footer ***/
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: $slate;
+  color: $white;
+  padding: 22px 25px 22px 25px;
+
+  h2 {
+    font-family: shrikhand;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  i {
+    font-size: 1.5rem;
+    padding-left: 12px;
+  }
+}

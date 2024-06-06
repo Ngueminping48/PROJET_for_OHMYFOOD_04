@@ -1,0 +1,11 @@
+{
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/ohmyfood/assets/css"
+    }
+  ],
+  "liveSassCompile.settings.useNewCompiler": false,
+  "liveServer.settings.port": 5502
+}
