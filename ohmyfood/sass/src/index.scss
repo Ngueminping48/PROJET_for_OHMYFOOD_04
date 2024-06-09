@@ -2,9 +2,9 @@
 /* INDEX */
 /***header***/
 
-@import '_layout';
+@import "_layout";
 /**** Variables ****/
-$font-family: 'Roboto', sans-serif;
+$font-family: "Roboto", sans-serif;
 $color-primary: #9356dc;
 $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
@@ -132,7 +132,7 @@ $icon: #7e7e7e;
       border-radius: 30px;
       padding: 30px;
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
-      
+
       &:hover p {
         color: rgba(250, 139, 223, 1);
       }
@@ -264,7 +264,7 @@ $icon: #7e7e7e;
     h3 {
       font-size: 1.125rem;
       color: $white;
-      font-family: 'Shrikhand', serif;
+      font-family: "Shrikhand", serif;
       margin: 15px 0;
     }
 
@@ -310,70 +310,68 @@ $icon: #7e7e7e;
 }
 
 /*-----------------LOADER-----------------*/
-  .overlay {
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #99E2D0;
-    opacity: 0;
-    animation: loader 3000ms ease-out forwards 1;
-    position: fixed;
-    animation: myloader 3000ms ease-out forwards 1;
+.overlay {
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #99e2d0;
+  opacity: 0;
+  animation: loader 3000ms cubic-bezier(0, 0, 0.58, 1) forwards 1;
+  position: fixed;
+  animation: myloader 3000ms cubic-bezier(0, 0, 0.58, 1) forwards 1;
+}
+
+.load {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  animation: myloader 3000ms cubic-bezier(0, 0, 0.58, 1) forwards 1;
+
+  &__letters {
+    display: flex;
+    font-size: 3.1rem;
+    font-family: "Shrikhand", serif;
+
+    .letter-1 {
+      animation: letter_loader 2300ms ease-in 150ms 4; // 1.5s de l'animation ça commence a partir de 150ms
+    }
+    .letter-2 {
+      animation: letter_loader 2300ms ease-in 300ms 4;
+    }
+    .letter-3 {
+      animation: letter_loader 2300ms ease-in 450ms 4;
+    }
+    .letter-4 {
+      animation: letter_loader 2300ms ease-in 600ms 4;
+    }
+    .letter-5 {
+      animation: letter_loader 2300ms ease-in 750ms 4;
+    }
+    .letter-6 {
+      animation: letter_loader 2300ms ease-in 900ms 4;
+    }
+    .letter-7 {
+      animation: letter_loader 2300ms ease-in 1050ms 4;
+    }
+    .letter-8 {
+      animation: letter_loader 2300ms ease-in 1200ms 4;
+    }
   }
 
-    .load {
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      animation: myloader 3000ms ease-out forwards 1;
-
-      &__letters {
-        display: flex;
-        font-size: 3.1rem;
-        font-family : "Shrikhand", serif ;
-
-        .letter-1{
-          animation: letter_loader 2300ms ease-in 150ms 4; // 1.5s de l'animation ça commence a partir de 150ms  
-        } 
-        .letter-2{
-          animation: letter_loader 2300ms ease-in 300ms 4;
-        }
-        .letter-3{
-          animation: letter_loader 2300ms ease-in 450ms 4;
-        }
-        .letter-4{
-          animation: letter_loader 2300ms ease-in 600ms 4;
-        }
-        .letter-5{
-          animation: letter_loader 2300ms ease-in 750ms 4;
-        }
-        .letter-6{
-          animation: letter_loader 2300ms ease-in 900ms 4;
-        }
-        .letter-7{
-          animation: letter_loader 2300ms ease-in 1050ms 4;
-        }
-        .letter-8{
-          animation: letter_loader 2300ms ease-in 1200ms 4;
-
-      }
-      
-    }
-
-    .load__bar {
-      display: flex;
-      position: relative;
-      background: #ffffff;
-      width: 220px;
-      height: 3px;
-      transform-origin: left;
-      animation: loader__bar 3000ms ease-in-out backwards;
-      margin-top: 10px;
+  .load__bar {
+    display: flex;
+    position: relative;
+    background: #ffffff;
+    width: 220px;
+    height: 3px;
+    transform-origin: left;
+    animation: loader__bar 3000ms ease-in-out backwards;
+    margin-top: 10px;
   }
 }
 
@@ -383,16 +381,16 @@ $icon: #7e7e7e;
     opacity: 0.1;
   }
   20% {
-    transform: scaleX(0.20);
+    transform: scaleX(0.2);
   }
   40% {
-    transform: scaleX(0.40);
+    transform: scaleX(0.4);
   }
   60% {
-    transform: scaleX(0.60);
+    transform: scaleX(0.6);
   }
   80% {
-    transform: scaleX(0.80);
+    transform: scaleX(0.8);
   }
   100% {
     transform: scaleX(1);
@@ -406,11 +404,15 @@ $icon: #7e7e7e;
   }
   20% {
     opacity: 1;
-    transform: scaleY(2); // 1.2 permet de zoomer plus grand que 1 et de le faire grossir plus rapidement pour qu'il soit visible
+    transform: scaleY(
+      2
+    ); // 1.2 permet de zoomer plus grand que 1 et de le faire grossir plus rapidement pour qu'il soit visible
   }
   40% {
     opacity: 1;
-    transform: scaleY(1); //scaleY(1) permet de zoomer et de revenir à sa taille initiale et de le faire grossir 
+    transform: scaleY(
+      1
+    ); //scaleY(1) permet de zoomer et de revenir à sa taille initiale et de le faire grossir
   }
   60% {
     opacity: 1;
@@ -573,9 +575,7 @@ $icon: #7e7e7e;
   }
 }
 
-
-
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
   .steps-section {
     width: 80%;
     margin: 0 auto;
@@ -585,6 +585,5 @@ $icon: #7e7e7e;
       margin-bottom: 20px;
       font-size: 18px;
     }
-
   }
 }
