@@ -1,5 +1,8 @@
 /* LAYOUT */
 
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+$font-family: 'Roboto', sans-serif;
 $color-primary: #9356dc;
 $color-secondary1: #ff79da;
 $color-tertiary: #99e2d0;
@@ -48,6 +51,7 @@ body {
   color: black;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .logo {
