@@ -337,8 +337,8 @@ $icon: #7e7e7e;
         font-family : "Shrikhand", serif ;
 
         .letter-1{
-          animation: letter_loader 2300ms ease-in 150ms 4;
-        }
+          animation: letter_loader 2300ms ease-in 150ms 4; // 1.5s de l'animation ça commence a partir de 150ms  
+        } 
         .letter-2{
           animation: letter_loader 2300ms ease-in 300ms 4;
         }
@@ -397,7 +397,7 @@ $icon: #7e7e7e;
     transform: scaleX(1);
   }
 }
-
+// ANIMATION LETTER point zero opacite et scaleY 1
 @keyframes letter_loader {
   0% {
     opacity: 1;
@@ -405,16 +405,15 @@ $icon: #7e7e7e;
   }
   20% {
     opacity: 1;
-    transform: scaleY(1.2);
-    
+    transform: scaleY(2); // 1.2 permet de zoomer plus grand que 1 et de le faire grossir plus rapidement pour qu'il soit visible
   }
   40% {
     opacity: 1;
-    transform: scaleY(1);
+    transform: scaleY(1); //scaleY(1) permet de zoomer et de revenir à sa taille initiale et de le faire grossir 
   }
   60% {
     opacity: 1;
-    transform: scaleY(1.2);
+    transform: scaleY(2);
   }
   80% {
     opacity: 0;

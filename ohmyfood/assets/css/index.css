@@ -456,7 +456,7 @@ footer i {
   }
   20% {
     opacity: 1;
-    transform: scaleY(1.2);
+    transform: scaleY(2);
   }
   40% {
     opacity: 1;
@@ -464,7 +464,7 @@ footer i {
   }
   60% {
     opacity: 1;
-    transform: scaleY(1.2);
+    transform: scaleY(2);
   }
   80% {
     opacity: 0;
