@@ -161,7 +161,7 @@ footer i {
 .hero h3 {
   margin-bottom: 5px;
   text-align: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
@@ -250,7 +250,7 @@ footer i {
 }
 .restaurants .restaurants-container h3 {
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 .restaurants .restaurants-container .cards {
   display: grid;
@@ -283,7 +283,7 @@ footer i {
 }
 .restaurants .restaurants-container .cards .card__content p {
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 1.125;
   padding: 0px 20px 20px 20px;
 }
 .restaurants .restaurants-container .cards .card__header {

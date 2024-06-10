@@ -242,13 +242,13 @@
   justify-content: center;
 }
 .footer__content h3 {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #ffffff;
   font-family: "Shrikhand", serif;
   margin: 15px 0;
 }
 .footer__content p {
-  font-size: 14px;
+  font-size: 0.75rem;
 }
 .footer__content-i {
   display: flex;

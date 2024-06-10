@@ -163,10 +163,10 @@
       &.desserts {
         opacity:0;
         transform: translateY(20px);
-        animation: fadeIn 1s forwards; 
+        animation: fadeIn 1s forwards; // Fade In animation-name ***//forwards signifie l'animation conserve le style final appliqué à la fin de l'animation.
       }
       &.entree:nth-child(1) {
-        animation-delay: 0.3s;
+        animation-delay: 0.3s; // Fade In animation-delay le délai avant le début de l'animation.
       }
       &.entree:nth-child(2) {
         animation-delay: 0.6s;
