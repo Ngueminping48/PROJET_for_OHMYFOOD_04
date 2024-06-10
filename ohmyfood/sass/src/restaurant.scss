@@ -1,4 +1,4 @@
-// tous les elements communs de la page restaurant
+// tous les elements exentiels de la page restaurant
 * {
   font-family: Roboto, sans-serif;
   box-sizing: border-box;
@@ -192,6 +192,7 @@
       &.desserts:nth-child(3) {
         animation-delay: 2.7s;
       }
+      //prix et icone a droite dans le menu mobile 
 
       &-price {
         transition: transform 0.5s ease-in-out;
@@ -262,13 +263,13 @@
     color: #ffffff;
     justify-content: center;
     h3 {
-      font-size: 1.125rem;
+      font-size: 1rem;
       color: #ffffff;
       font-family: 'Shrikhand', serif;
       margin: 15px 0;
     }
     p {
-      font-size: 14px;
+      font-size: 0.75rem;
     }
     &-i {
       display: flex;
