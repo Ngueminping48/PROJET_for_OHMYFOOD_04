@@ -1,0 +1,136 @@
+.overlay {
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #99e2d0;
+  opacity: 0;
+  animation: loader 3000ms cubic-bezier(0, 0, 0.58, 1) forwards 1;
+  position: fixed;
+  animation: myloader 3000ms cubic-bezier(0, 0, 0.58, 1) forwards 1;
+}
+
+.load {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  animation: myloader 3000ms cubic-bezier(0, 0, 0.58, 1) forwards 1;
+
+  &__letters {
+    display: flex;
+    font-size: 3.1rem;
+    font-family: 'Shrikhand', serif;
+
+    .letter-1 {
+      animation: letter_loader 2300ms ease-in 150ms 4; // 1.5s de l'animation ça commence a partir de 150ms
+    }
+    .letter-2 {
+      animation: letter_loader 2300ms ease-in 300ms 4;
+    }
+    .letter-3 {
+      animation: letter_loader 2300ms ease-in 450ms 4;
+    }
+    .letter-4 {
+      animation: letter_loader 2300ms ease-in 600ms 4;
+    }
+    .letter-5 {
+      animation: letter_loader 2300ms ease-in 750ms 4;
+    }
+    .letter-6 {
+      animation: letter_loader 2300ms ease-in 900ms 4;
+    }
+    .letter-7 {
+      animation: letter_loader 2300ms ease-in 1050ms 4;
+    }
+    .letter-8 {
+      animation: letter_loader 2300ms ease-in 1200ms 4;
+    }
+  }
+
+  .load__bar {
+    display: flex;
+    position: relative;
+    background: #ffffff;
+    width: 220px;
+    height: 3px;
+    transform-origin: left;
+    animation: loader__bar 3000ms ease-in-out backwards;
+    margin-top: 10px;
+  }
+}
+
+@keyframes loader__bar {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.1;
+  }
+  20% {
+    transform: scaleX(0.2);
+  }
+  40% {
+    transform: scaleX(0.4);
+  }
+  60% {
+    transform: scaleX(0.6);
+  }
+  80% {
+    transform: scaleX(0.8);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+// ANIMATION LETTER point zero opacite et scaleY 1
+@keyframes letter_loader {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  20% {
+    opacity: 1;
+    transform: scaleY(
+      2
+    ); // 1.2 permet de zoomer plus grand que 1 et de le faire grossir plus rapidement pour qu'il soit visible
+  }
+  40% {
+    opacity: 1;
+    transform: scaleY(
+      1
+    ); //scaleY(1) permet de zoomer et de revenir à sa taille initiale et de le faire grossir
+  }
+  60% {
+    opacity: 1;
+    transform: scaleY(2);
+  }
+  80% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes myloader {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}

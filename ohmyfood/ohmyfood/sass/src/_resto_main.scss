@@ -1,0 +1,218 @@
+/* Mixin for button gradient */
+@mixin button-gradient($start-color, $end-color) {
+  background: linear-gradient(0deg, $start-color 33%, $end-color 70%);
+}
+
+.main {
+  background-color: $bg-color;
+  &-container {
+    width: 95%;
+    margin: auto;
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    position: relative;
+    top: -50px;
+  }
+
+  &-hero {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+
+    h1 {
+      font-weight: 900;
+      font-size: 28px;
+      font-style: oblique;
+    }
+
+    &__icon {
+      position: relative;
+
+      .fa-regular,
+      .fa-solid {
+        font-size: 30px;
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      }
+
+      .fa-solid {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      &:hover {
+        .fa-regular {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+
+        .fa-solid {
+          opacity: 1;
+          transform: scale(1);
+          color: #cb68db;
+        }
+      }
+    }
+  }
+
+  &-btn {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 20px 0;
+
+    button {
+      @include button-gradient($color-primary, $color-secondary);
+      border-radius: 50px;
+      box-shadow: $box-shadow;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+        background: linear-gradient(
+          349deg,
+          $color-primary 33%,
+          $color-secondary 70%
+        );
+      }
+    }
+  }
+}
+
+.foods {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &-articles {
+    transform-origin: top left;
+    animation-fill-mode: forwards;
+
+    &.entree {
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards 500ms;
+    }
+
+    &.plats {
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards 900ms;
+    }
+
+    &.desserts {
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards 1200ms;
+    }
+  }
+
+  &-article {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+
+    &-title::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background-color: #99e2d0;
+      width: 50px;
+      margin-top: 10px;
+    }
+
+    &__items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 15px 10px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+
+      &__menu {
+        width: 80%;
+
+        &-title {
+          max-width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 18px;
+        }
+        &-description {
+          max-width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &-price {
+        transition: transform 0.5s ease-in-out;
+        display: flex;
+        height: 100%;
+        width: 70px;
+        align-items: center;
+        background-color: #fff;
+        z-index: 10;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      &-icon {
+        position: absolute;
+        right: 0;
+        width: 100px;
+        transform: translateX(100px);
+        transition: transform 0.5s ease-in-out;
+        background-color: #99e2d0;
+        top: 0;
+        bottom: 0;
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+          font-size: 30px;
+          color: #fff;
+          transition: transform 1.2s ease-in-out;
+          transform: rotate(90deg);
+        }
+      }
+
+      &:hover {
+        .foods-article__items-icon {
+          transform: translateX(0);
+
+          i {
+            transform: rotate(0deg);
+          }
+        }
+
+        .foods-article__items-price {
+          transform: translateX(-70px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.header__location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  background-color: $grey;
+  box-shadow: 20px 4px 10px rgba(0, 0, 0, 0.1);
+  border-top: 2px solid rgb(146, 143, 143);
+  border-bottom: 2px solid rgb(179, 175, 175);
+
+  i {
+    margin-right: 10px;
+  }
+}
