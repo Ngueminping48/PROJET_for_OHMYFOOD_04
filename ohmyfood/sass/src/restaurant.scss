@@ -1,326 +1,38 @@
-// tous les elements exentiels de la page restaurant
-* {
-  font-family: Roboto, sans-serif;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+/* Variables */
 
-.header-logo__container {
-  display: flex;
-  align-items: center;
-}
+@import '_layout';
+@import '_resto_header';
+@import '_resto_main';
+@import '_resto_footer';
 
-.header__back {
-  padding: 0 20px;
-}
-
-.header__logo {
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  padding: 10px 0;
-  background-color: #fff;
-  box-shadow: 20px 4px 10px rgba(0, 0, 0, 0.1);
-  &-img {
-    width: 160px;
-    height: 40px;
-  }
-}
-
-.header-card__img {
-  width: 100vw;
-  height: 250px;
-  object-fit: cover;
-  margin: auto;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.main {
-  
-  background-color: #f2f2f2;
-  &-container {
-    width: 80%;
-    margin: auto;
-    background-color: #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    position: relative;
-    top: -50px;
-  }
-
-  &-hero {
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    padding: 20px 0px;
-    align-items: center;
-    h1 {
-      font-weight: 900;
-      font-size: 28px;
-      font-style: oblique;
-    }
-    &__icon {
-      position: relative;
-      .fa-regular,
-      .fa-solid {
-        font-size: 30px;
-        position: absolute;
-        top: -10px;
-        left: 10px;
-        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-      }
-      .fa-solid {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-      &:hover {
-        .fa-regular {
-          opacity: 0;
-          transform: scale(0.5);
-        }
-        .fa-solid {
-          opacity: 1;
-          transform: scale(1);
-          color: #cb68db;
-        }
-      }
-    }
-  }
-
-  &-btn {
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding: 20px 0px;
-    button {
-      background: linear-gradient(
-        0deg,
-        rgba(185, 118, 224, 1) 33%,
-        rgba(250, 139, 223, 1) 70%
-      );
-      border-radius: 50px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-      color: #fff;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: opacity 0.3s ease-in-out, background 0.3s ease-in-out;
-      &:hover {
-        opacity: 0.8;
-        background: linear-gradient(
-          349deg,
-          rgba(185, 118, 224, 1) 33%,
-          rgba(250, 139, 223, 1) 70%
-        );
-      }
-    }
-  }
-}
-
-.foods {
-  width: 95%;
-  margin: 0px auto;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 30px;
-
-  &-article {
-    display: grid;
-    gap: 20px;
-    margin-top: 20px;
-
-    &-title::after {
-      content: '';
-      display: block;
-      height: 2px;
-      background-color: #99e2d0;
-      width: 50px;
-      margin-top: 10px;
-    }
-
-    &__items {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      overflow: hidden;
-      position: relative;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 15px 10px 20px rgba(0, 0, 0, 0.1);
-      &.entree,
-      &.plats,
-      &.desserts {
-        opacity:0;
-        transform: translateY(20px);
-        animation: fadeIn 1s forwards; // Fade In animation-name ***//forwards signifie l'animation conserve le style final appliqué à la fin de l'animation.
-      }
-      &.entree:nth-child(1) {
-        animation-delay: 0.3s; // Fade In animation-delay le délai avant le début de l'animation.
-      }
-      &.entree:nth-child(2) {
-        animation-delay: 0.6s;
-      }
-      &.entree:nth-child(3) {
-        animation-delay: 0.9s;
-      }
-      &.plats:nth-child(1) {
-        animation-delay: 1.2s;
-      }
-      &.plats:nth-child(2) {
-        animation-delay: 1.5s;
-      }
-      &.plats:nth-child(3) {
-        animation-delay: 1.8s;
-      }
-      &.desserts:nth-child(1) {
-        animation-delay: 2.1s;
-      }
-      &.desserts:nth-child(2) {
-        animation-delay: 2.4s;
-      }
-      &.desserts:nth-child(3) {
-        animation-delay: 2.7s;
-      }
-      //prix et icone a droite dans le menu mobile 
-
-      &-price {
-        transition: transform 0.5s ease-in-out;
-        display: flex;
-        height: 100%;
-        width: 70px;
-        align-items: center;
-        background-color: #fff;
-        z-index: 10;
-        justify-content: center;
-        font-size: 18px;
-        font-weight: 600;
-      }
-
-      &-icon {
-        position: absolute;
-        right: 0px;
-        width: 100px;
-        transform: translateX(100px);
-        transition: transform 0.5s ease-in-out;
-        background-color: #99e2d0;
-        top: 0;
-        bottom: 0;
-        z-index: 30;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        i {
-          font-size: 30px;
-          color: #fff;
-          transition: transform 1.2s ease-in-out;
-          transform: rotate(90deg);
-        }
-      }
-      &:hover {
-        .foods-article__items-icon {
-          transform: translateX(0px);
-          i {
-            transform: rotate(0deg);
-          }
-        }
-        .foods-article__items-price {
-          transform: translateX(-70px);
-        }
-      }
-    }
-  }
-}
-
-.menu-title {
-  font-size: 18px;
-}
-
-.footer {
-  display: flex;
-  width: 100%;
-  height: 186px;
-  background-color: #353535;
-  align-items: center;
-  justify-content: center;
-
-  &__content {
-    display: flex;
-    width: 90%;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    color: #ffffff;
-    justify-content: center;
-    h3 {
-      font-size: 1rem;
-      color: #ffffff;
-      font-family: 'Shrikhand', serif;
-      margin: 15px 0;
-    }
-    p {
-      font-size: 0.75rem;
-    }
-    &-i {
-      display: flex;
-      align-items: center;
-      margin-right: 20px;
-      i {
-        margin-right: 10px;
-        font-size: 20px;
-      }
-    }
-    .first {
-      order: 2;
-      margin-bottom: 10px;
-    }
-    .second {
-      order: 3;
-      margin-bottom: 10px;
-    }
-    .third {
-      order: 4;
-      margin-bottom: 10px;
-    }
-    .fourth {
-      order: 5;
-      margin-bottom: 10px;
-    }
-    .five {
-      order: 1;
-    }
-  }
-}
-
-/****************MEDIA QUERIES***********/
+/* Media Queries */
 @media screen and (min-width: 768px) {
   .header-card__img {
     height: 350px;
   }
-  
+
+  .main-container {
+    width: 70%;
+  }
+
   .main-hero h1 {
     font-size: 32px;
   }
+
   .foods {
     width: 85%;
     grid-template-columns: repeat(3, 1fr);
   }
-  .menu-title {
+
+  .foods-article__items__menu-title {
     font-size: 22px;
+    text-overflow: initial;
   }
+
   .main-btn {
-    padding: 70px 0px;
+    padding: 70px 0;
   }
+
   .footer__content {
     flex-direction: row;
     margin: 0 auto;
@@ -328,35 +40,43 @@
     align-items: center;
     width: 92%;
     height: 100%;
+
     h3 {
       margin-right: 20px;
       margin-left: 10px;
       font-size: 1.125rem;
       margin: 15px 0;
     }
+
     p {
       font-size: 18px;
       margin-right: 10px;
     }
+
     &-i {
       margin-right: 20px;
     }
+
     .first {
       order: 1;
       margin-bottom: 0;
     }
+
     .second {
       order: 2;
       margin-bottom: 0;
     }
+
     .third {
       order: 3;
       margin-bottom: 0;
     }
+
     .fourth {
       order: 4;
       margin-bottom: 0;
     }
+
     .five {
       order: 5;
     }
@@ -367,15 +87,32 @@
   .main-hero h1 {
     font-size: 50px;
   }
+
   .foods {
     width: 70%;
   }
 }
 
+/* Keyframes */
 @keyframes fadeIn {
- 
-  to {
+  0% {
+    opacity: 0;
+    transform: scaleX(1) scaleY(0.5);
+  }
+
+  25% {
     opacity: 1;
-    transform: translateY(0);
+  }
+
+  50% {
+    transform: scaleX(1) scaleY(1.08);
+  }
+
+  90% {
+    transform: scaleX(1) scaleY(1);
+  }
+
+  100% {
+    opacity: 1;
   }
 }
