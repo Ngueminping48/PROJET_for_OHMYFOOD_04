@@ -466,6 +466,10 @@ footer i {
   .foods {
     width: 70%;
   }
+  .main-hero__icon .fa-regular,
+  .main-hero__icon .fa-solid {
+    left: 70px;
+  }
 }
 /* Keyframes */
 @keyframes fadeIn {

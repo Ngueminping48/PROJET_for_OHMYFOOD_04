@@ -132,6 +132,7 @@ footer i {
   padding-left: 12px;
 }
 
+/*** header_images logo ***/
 .header__location {
   display: flex;
   justify-content: center;
@@ -278,6 +279,7 @@ footer i {
   padding-left: 12px;
 }
 
+/**** HERO ***/
 .hero {
   display: flex;
   flex-direction: column;
@@ -566,6 +568,7 @@ footer i {
     z-index: -1;
   }
 }
+/*** footer ***/
 .footer {
   display: flex;
   width: 100%;
